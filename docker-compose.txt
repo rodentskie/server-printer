@@ -1,7 +1,6 @@
 version: '3'
 services:
   server-print:
-    privileged: true
     build:
       context: ./server-printer
       dockerfile: Dockerfile
@@ -9,7 +8,9 @@ services:
     container_name: server-printer
     environment:
       - PORT=3001
+    privileged: true
     volumes:
+      - /dev/bus/usb:/dev/bus/usb
       - ./server-printer:/usr/src/app
       - server-printer_node_modules:/usr/src/app/node_modules
     ports:
