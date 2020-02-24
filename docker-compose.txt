@@ -1,6 +1,7 @@
 version: '3'
 services:
   server-print:
+    privileged: true
     build:
       context: ./server-printer
       dockerfile: Dockerfile
