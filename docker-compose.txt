@@ -1,0 +1,17 @@
+version: '3'
+services:
+  server-print:
+    build:
+      context: ./server-printer
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    container_name: server-printer
+    environment:
+      - PORT=3001
+    volumes:
+      - ./server-printer:/usr/src/app
+      - server-printer_node_modules:/usr/src/app/node_modules
+    ports:
+      - 3001:3001
+volumes:
+ server-printer_node_modules:
