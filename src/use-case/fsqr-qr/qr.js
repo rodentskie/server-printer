@@ -8,7 +8,7 @@ const printFsqrQR = ({ escpos, fsqrQr }) => {
     // connect to installed printer thru USB
     // check other way to connect on npm page :)
     // const device = new escpos.USB("04b8", "0e11");
-    const device = new escpos.USB(1208, 3601);
+    const device = new escpos.USB();
     // const device = new escpos.Serial("/dev/ttyAMA0");
 
     const options = { encoding: "GB18030" /* default */ };
